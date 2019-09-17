@@ -5,5 +5,5 @@ import java.util.stream.Stream;
 
 public interface TopTenSelector {
 
-  List<Integer> topN(Stream<Integer> input);
+    List<Integer> topN(Stream<Integer> input);
 }

@@ -10,19 +10,19 @@ import java.util.PriorityQueue;
  */
 public class BoundedPriorityQueue extends PriorityQueue<Integer> {
 
-  private int bound;
+    private int bound;
 
-  public BoundedPriorityQueue(int bound) {
-    super(bound + 1); // the maximum possible size of this queue is bound + 1
-    this.bound = bound;
-  }
-
-  @Override
-  public boolean offer(Integer integer) {
-    boolean offer = super.offer(integer);
-    if (size() > bound) {
-      poll();
+    public BoundedPriorityQueue(int bound) {
+        super(bound + 1); // the maximum possible size of this queue is bound + 1
+        this.bound = bound;
     }
-    return offer;
-  }
+
+    @Override
+    public boolean offer(Integer integer) {
+        boolean offer = super.offer(integer);
+        if (size() > bound) {
+            poll();
+        }
+        return offer;
+    }
 }
